@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Personne } from '../Personne';
+import { ApiService } from './api.service';
 
 @Component({
   selector: 'app-personnes',
@@ -6,5 +8,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./personnes.component.scss']
 })
 export class PersonnesComponent {
+  personnes: Personne[] = [];
 
+
+  constructor(private personneService: ApiService) {}
+
+  ngOnInit(): void {
+    this.getToutesLesPersonnes();
+  }
+
+  getToutesLesPersonnes(): void {
+    this.personneService.getToutesLesPersonnes().subscribe((personnes) => {
+      this.personnes = personnes;
+    });
+  }
 }

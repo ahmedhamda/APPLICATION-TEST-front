@@ -1,0 +1,28 @@
+<h2>Ajouter un Emploi </h2>
+
+<form [formGroup]="emploiForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="titre">Titre:</label>
+    <input type="text" id="titre" formControlName="titre" required>
+  </div>
+  <div>
+    <label for="dateDebut">dateDebut:</label>
+    <input type="date" id="dateDebut" formControlName="dateDebut" required>
+  </div>
+  <div>
+    <label for="dateFin">dateFin:</label>
+    <input type="date" id="dateFin" formControlName="dateFin" required>
+  </div>
+  <div>
+    <label for="personneId">personneId:</label>
+    <input type="text" id="personneId" formControlName="personneId" required>
+  </div>
+  <div>
+    <label for="nomEntreprise">nomEntreprise</label>
+    <input type="text" id="nomEntreprise" formControlName="nomEntreprise" required>
+  </div>
+
+  <div class="buttons">
+    <button type="submit" >Ajouter</button>
+  </div>
+</form>

@@ -1,1 +1,12 @@
-<p>personnes works!</p>
+
+<ul class="personne-list">
+  <li *ngFor="let personne of personnes" class="personne-item">
+    <strong>{{ personne.nom }} {{ personne.prenom }}</strong> - Age: {{ personne.age }}
+    <div class="personne-details">
+      <strong>Emplois Actuels:</strong>
+      <ul class="emploi-list">
+        <li *ngFor="let emploi of personne.emploisActuels">{{ emploi }}</li>
+      </ul>
+    </div>
+  </li>
+</ul>

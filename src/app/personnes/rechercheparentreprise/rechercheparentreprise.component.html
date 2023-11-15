@@ -1,0 +1,22 @@
+<h2>Personnes par entreprise</h2>
+
+<label for="nomEntreprise">Nom de l'entreprise:</label>
+<input type="text" id="nomEntreprise" [(ngModel)]="nomEntrepriseRecherche" />
+<button (click)="rechercherParEntreprise()">Rechercher</button>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Prénom</th>
+      <!-- Ajoutez d'autres colonnes selon les détails dont vous disposez -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let personne of personnes">
+      <td>{{ personne.nom }}</td>
+      <td>{{ personne.prenom }}</td>
+      <!-- Ajoutez d'autres colonnes selon les détails dont vous disposez -->
+    </tr>
+  </tbody>
+</table>
